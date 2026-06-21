@@ -93,8 +93,8 @@ a {
   height: 3rem;
   place-items: center;
   background:
-    linear-gradient(rgba(255, 249, 240, 0.18), rgba(255, 249, 240, 0.18)),
-    url("mystic-lis-business-card.png") top center / 235% auto;
+    linear-gradient(rgba(255, 249, 240, 0.08), rgba(255, 249, 240, 0.08)),
+    url("mystic-lis-logo.png") center / cover;
   border-radius: 999px;
   box-shadow: 0 14px 28px rgba(34, 24, 21, 0.18);
 }
@@ -292,21 +292,21 @@ h3 {
   position: relative;
 }
 
-.official-card {
+.logo-card {
   overflow: hidden;
   margin: 0 0 1.4rem;
-  background: #eaded3;
+  background: #e2d6c7;
   border: 1px solid rgba(34, 24, 21, 0.1);
   border-radius: 24px;
   box-shadow: 0 22px 48px rgba(34, 24, 21, 0.18);
 }
 
-.official-card img {
+.logo-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 1.95;
+  aspect-ratio: 1;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
 }
 
 .profile-title {
