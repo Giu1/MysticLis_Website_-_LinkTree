@@ -5,10 +5,11 @@ const statusMessage = document.querySelector("#form-status");
 const detailsField = form?.elements.details;
 
 const detailPrompts = {
-  "Vela personalizada": "Conta-nos o aroma, cor, tema, mensagem, embalagem e para que ocasiao e.",
-  "Pedido em quantidade / bulk": "Indica quantidade, prazo, se precisas de fatura, embalagem e destino.",
-  "Lancamento sazonal": "Diz que colecao te interessa, se queres pre-reserva ou receber novidades.",
-  "Organizacao de evento": "Indica tipo de evento, numero de convidados, local, data e tipo de apoio pretendido.",
+  "Velas artesanais": "Conta-nos o aroma, cor, tema, mensagem, embalagem e para que ocasiao e.",
+  "Ambientadores": "Indica se procuras difusores, sprays, quantidade, aroma e espaco onde serao usados.",
+  "Workshops criativos": "Indica numero de participantes, local, data pretendida e tipo de experiencia.",
+  "Decoracao de eventos": "Indica tipo de evento, numero de convidados, local, data e estilo pretendido.",
+  "Lembrancas personalizadas": "Indica evento, quantidade, tema, cores, prazo e se queres embalagem personalizada.",
   "Outro pedido": "Descreve o pedido com o maximo de detalhes possivel."
 };
 

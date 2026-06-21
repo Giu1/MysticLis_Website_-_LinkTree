@@ -88,16 +88,14 @@ a {
 
 .brand-mark {
   display: grid;
-  width: 2.6rem;
-  height: 2.6rem;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
   place-items: center;
-  color: #fff;
   background:
-    radial-gradient(circle at 35% 20%, rgba(215, 181, 109, 0.78), transparent 25%),
-    var(--ink);
+    linear-gradient(rgba(255, 249, 240, 0.18), rgba(255, 249, 240, 0.18)),
+    url("mystic-lis-business-card.png") top center / 235% auto;
   border-radius: 999px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.2rem;
   box-shadow: 0 14px 28px rgba(34, 24, 21, 0.18);
 }
 
@@ -294,53 +292,21 @@ h3 {
   position: relative;
 }
 
-.profile-visual {
-  position: relative;
-  display: grid;
-  place-items: center;
-  min-height: 15rem;
+.official-card {
+  overflow: hidden;
+  margin: 0 0 1.4rem;
+  background: #eaded3;
+  border: 1px solid rgba(34, 24, 21, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 22px 48px rgba(34, 24, 21, 0.18);
 }
 
-.profile-orb {
-  width: 12rem;
-  aspect-ratio: 1;
-  margin: 0 auto 1.6rem;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 50% 22%, rgba(255, 246, 214, 0.95) 0 10%, transparent 11%),
-    radial-gradient(circle at 48% 38%, rgba(255, 244, 219, 0.98) 0 16%, transparent 17%),
-    linear-gradient(rgba(34, 24, 21, 0.08), rgba(34, 24, 21, 0.08)),
-    radial-gradient(circle at 48% 35%, #fff7df 0 16%, #ead0b9 17% 43%, #9c7b60 44% 45%, #f5eadc 46% 100%);
-  box-shadow:
-    inset 0 -24px 42px rgba(34, 24, 21, 0.16),
-    0 28px 60px rgba(34, 24, 21, 0.18);
-}
-
-.spark {
-  position: absolute;
+.official-card img {
   display: block;
-  width: 0.65rem;
-  aspect-ratio: 1;
-  background: var(--gold);
-  border-radius: 999px;
-  box-shadow: 0 0 28px rgba(215, 181, 109, 0.85);
-}
-
-.spark-one {
-  top: 1.2rem;
-  left: 23%;
-}
-
-.spark-two {
-  right: 18%;
-  bottom: 4.5rem;
-  width: 0.42rem;
-}
-
-.spark-three {
-  top: 42%;
-  right: 9%;
-  width: 0.5rem;
+  width: 100%;
+  aspect-ratio: 1.95;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .profile-title {
@@ -417,7 +383,7 @@ h3 {
 }
 
 .service-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   margin-top: 2rem;
 }
 
