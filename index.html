@@ -2,7 +2,10 @@
 <html lang="pt">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff9f0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta
       name="description"
       content="Mystic Lis cria velas artesanais, ambientadores, workshops criativos, decoracao de eventos e lembrancas personalizadas."
@@ -20,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/styles.css?v=true-logo" />
+    <link rel="stylesheet" href="assets/styles.css?v=mobile" />
   </head>
   <body>
     <header class="site-header">
@@ -29,6 +32,9 @@
         <span>Mystic Lis</span>
       </a>
       <nav aria-label="Navegacao principal">
+        <a href="velas.html">Loja</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="#loja">Destaques</a>
         <a href="#servicos">Servicos</a>
         <a href="#galeria">Galeria</a>
         <a href="#questionario">Questionario</a>
@@ -46,17 +52,24 @@
             decoracao de eventos e lembrancas personalizadas para dias especiais.
           </p>
           <div class="hero-actions" aria-label="Acoes principais">
-            <a class="button primary" href="#questionario">Fazer pedido</a>
-            <a class="button secondary" href="https://www.instagram.com/mysticlis_/" target="_blank" rel="noreferrer">
-              Ver Instagram
+            <a class="button primary" href="velas.html">Explorar loja</a>
+            <a class="button secondary" href="#questionario">Fazer pedido</a>
+            <a class="button ghost" href="https://www.instagram.com/mysticlis_/" target="_blank" rel="noreferrer">
+              Instagram
             </a>
           </div>
+          <p class="hero-note">Cera de soja · fragrancias veganas · entregas Aveiro, Leiria, Torres Novas e CTT</p>
         </div>
 
         <aside class="profile-card" aria-label="Resumo Mystic Lis">
           <figure class="logo-card">
             <img src="assets/mystic-lis-logo.png" alt="Logotipo Mystic Lis por Ines Vasconcelos" />
           </figure>
+          <div class="hero-mosaic" aria-hidden="true">
+            <img src="assets/gallery/work-01.jpeg" alt="" />
+            <img src="assets/gallery/work-08.jpeg" alt="" />
+            <img src="assets/gallery/work-15.jpeg" alt="" />
+          </div>
           <p class="profile-title">Mystic Lis</p>
           <p>Para mais momentos acolhedores.</p>
           <ul>
@@ -73,6 +86,14 @@
         <p class="eyebrow">Links rapidos</p>
         <h2 id="links-title">Escolhe o caminho certo</h2>
         <div class="link-grid">
+          <a href="velas.html" class="quick-link">
+            <span>Loja & velas</span>
+            <small>Catalogo, presentes, eventos e encomendas personalizadas.</small>
+          </a>
+          <a href="eventos.html" class="quick-link">
+            <span>Eventos e lembrancas</span>
+            <small>Decoracao, workshops e lembrancas personalizadas.</small>
+          </a>
           <a href="#questionario" class="quick-link">
             <span>Encomendar vela personalizada</span>
             <small>Escolhe aroma, quantidade, data e detalhes.</small>
@@ -96,6 +117,24 @@
         </div>
       </section>
 
+      <section id="loja" class="shop section-shell" aria-labelledby="shop-title">
+        <div class="section-intro split-intro">
+          <div>
+            <p class="eyebrow">Loja artesanal</p>
+            <h2 id="shop-title">Pecas em destaque</h2>
+          </div>
+          <p>
+            Portfolio com fotografias reais de velas, cabazes e lembrancas Mystic Lis.
+            Cada peca e feita a mao — precos e prazos confirmados no questionario ou por WhatsApp.
+          </p>
+        </div>
+        <div id="featured-shop" class="product-grid" data-shop-grid></div>
+        <p class="shop-footnote">
+          <a class="text-link" href="velas.html">Ver catalogo completo</a>
+          · entregas locais e envio CTT
+        </p>
+      </section>
+
       <section id="galeria" class="gallery section-shell" aria-labelledby="gallery-title">
         <div class="section-intro split-intro">
           <div>
@@ -103,58 +142,108 @@
             <h2 id="gallery-title">Trabalhos feitos e colecoes lancadas</h2>
           </div>
           <p>
-            Uma montra visual para mostrar velas personalizadas, packs para presente,
-            lembrancas de eventos e edicoes sazonais. Quando houver fotografias reais,
-            basta trocar os fundos destes cartoes por imagens.
+            Uma montra visual com fotografias reais de velas artesanais, embalagens,
+            detalhes personalizados e trabalhos ja preparados pela Mystic Lis.
           </p>
         </div>
 
         <div class="gallery-grid" aria-label="Galeria de trabalhos Mystic Lis">
-          <article class="gallery-card tall work-one">
-            <span class="gallery-tag">Feito a mao</span>
-            <div>
-              <h3>Velas personalizadas</h3>
-              <p>Aromas, cores e acabamentos pensados para cada pedido.</p>
-            </div>
-          </article>
-          <article class="gallery-card work-two">
-            <span class="gallery-tag">Presentes</span>
-            <div>
-              <h3>Packs especiais</h3>
-              <p>Conjuntos prontos para oferecer em datas importantes.</p>
-            </div>
-          </article>
-          <article class="gallery-card work-three">
-            <span class="gallery-tag">Eventos</span>
-            <div>
-              <h3>Decoracao de eventos</h3>
-              <p>Pequenos detalhes para casamentos, batizados e encontros.</p>
-            </div>
-          </article>
-          <article class="gallery-card wide work-four">
-            <span class="gallery-tag">Bulk</span>
-            <div>
-              <h3>Encomendas em quantidade</h3>
-              <p>Producoes coordenadas para marcas, cabazes e empresas.</p>
-            </div>
-          </article>
+          <button type="button" class="photo-card photo-featured" data-service="Velas artesanais" data-product="canela-citrico">
+            <img src="assets/gallery/work-01.jpeg" alt="Vela artesanal decorada com canela e laranja, ideal para presentes aromaticos e momentos acolhedores." loading="lazy" />
+            <span>Velas aromaticas</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Velas artesanais">
+            <img src="assets/gallery/work-02.jpeg" alt="Vela artesanal Mystic Lis com detalhes naturais e composicao delicada para casa ou oferta." loading="lazy" />
+            <span>Detalhes naturais</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Velas artesanais">
+            <img src="assets/gallery/work-03.jpeg" alt="Peca personalizada Mystic Lis com acabamento artesanal pensado para ocasioes especiais." loading="lazy" />
+            <span>Pecas personalizadas</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Velas artesanais">
+            <img src="assets/gallery/work-04.jpeg" alt="Vela decorativa com acabamentos artesanais e elementos aromaticos selecionados." loading="lazy" />
+            <span>Acabamentos artesanais</span>
+          </button>
+          <button type="button" class="photo-card photo-wide" data-service="Velas artesanais" data-product="cabaz-presente">
+            <img src="assets/gallery/work-05.jpeg" alt="Composicao para presente com vela artesanal, embalagem Mystic Lis e elementos naturais." loading="lazy" />
+            <span>Composicoes para presente</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Velas artesanais">
+            <img src="assets/gallery/work-06.jpeg" alt="Vela artesanal em cenario branco e madeira para criar momentos acolhedores em casa." loading="lazy" />
+            <span>Momentos acolhedores</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Velas artesanais">
+            <img src="assets/gallery/work-07.jpeg" alt="Produto feito a mao pela Mystic Lis com cuidado artesanal em cada detalhe." loading="lazy" />
+            <span>Feito a mao</span>
+          </button>
+          <button type="button" class="photo-card photo-featured" data-service="Velas artesanais" data-product="embalagem-mystic">
+            <img src="assets/gallery/work-08.jpeg" alt="Vela artesanal com embalagem Mystic Lis, pronta para oferecer ou entregar como presente." loading="lazy" />
+            <span>Embalagem Mystic Lis</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Lembrancas personalizadas">
+            <img src="assets/gallery/work-09.jpeg" alt="Pack especial Mystic Lis com caixa de presente, laço e produto aromatico personalizado." loading="lazy" />
+            <span>Packs especiais</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Lembrancas personalizadas">
+            <img src="assets/gallery/work-10.jpeg" alt="Lembranca aromatica com embalagem personalizada para eventos e datas especiais." loading="lazy" />
+            <span>Lembrancas</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Lembrancas personalizadas">
+            <img src="assets/gallery/work-11.jpeg" alt="Conjunto artesanal Mystic Lis pronto a oferecer com apresentacao cuidada." loading="lazy" />
+            <span>Pronto a oferecer</span>
+          </button>
+          <button type="button" class="photo-card photo-wide" data-service="Velas artesanais">
+            <img src="assets/gallery/work-12.jpeg" alt="Conjunto de velas artesanais Mystic Lis ideal para colecoes, cabazes e encomendas." loading="lazy" />
+            <span>Colecoes e encomendas</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Velas artesanais">
+            <img src="assets/gallery/work-13.jpeg" alt="Vela em formato especial com detalhe decorativo para presentes e eventos." loading="lazy" />
+            <span>Formatos especiais</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Velas artesanais">
+            <img src="assets/gallery/work-14.jpeg" alt="Vela artesanal com acabamento delicado e textura suave pensada para oferta." loading="lazy" />
+            <span>Detalhes delicados</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Lembrancas personalizadas" data-product="anjo-comunhao">
+            <img src="assets/gallery/work-15.jpeg" alt="Vela anjo artesanal com cruz decorativa, ideal para batizados e comunhoes." loading="lazy" />
+            <span>Batizados e comunhoes</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Lembrancas personalizadas">
+            <img src="assets/gallery/work-16.jpeg" alt="Lembranca personalizada Mystic Lis adaptada ao tema e ocasiao do evento." loading="lazy" />
+            <span>Lembrancas personalizadas</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Decoracao de eventos">
+            <img src="assets/gallery/work-17.jpeg" alt="Peca artesanal Mystic Lis preparada para eventos especiais e mesas decoradas." loading="lazy" />
+            <span>Eventos especiais</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Velas artesanais">
+            <img src="assets/gallery/work-18.jpeg" alt="Producao artesanal Mystic Lis com textura suave e acabamento cuidado." loading="lazy" />
+            <span>Producao artesanal</span>
+          </button>
+          <button type="button" class="photo-card" data-service="Velas artesanais">
+            <img src="assets/gallery/work-19.jpeg" alt="Trabalho artesanal Mystic Lis finalizado e pronto para entrega ou presente." loading="lazy" />
+            <span>Trabalho finalizado</span>
+          </button>
         </div>
 
         <div class="collection-strip" aria-label="Colecoes lancadas">
           <article class="collection-card">
             <span>01</span>
             <h3>Soft Rituals</h3>
-            <p>Colecao calma para casa, autocuidado e rotinas lentas.</p>
+            <p>Tacas aromaticas, cerâmica botanical e rituais calmos para casa.</p>
+            <a class="text-link" href="velas.html?categoria=velas">Ver velas</a>
           </article>
           <article class="collection-card">
             <span>02</span>
             <h3>Seasonal Glow</h3>
-            <p>Edicoes limitadas para datas festivas e mudancas de estacao.</p>
+            <p>Cabazes, packs e embalagem Mystic Lis para datas especiais.</p>
+            <a class="text-link" href="velas.html?categoria=presentes">Ver presentes</a>
           </article>
           <article class="collection-card">
             <span>03</span>
             <h3>Event Minis</h3>
-            <p>Formatos pequenos para lembrancas e mesas especiais.</p>
+            <p>Anjos, lembrancas personalizadas e detalhes para convidados.</p>
+            <a class="text-link" href="eventos.html">Ver eventos</a>
           </article>
         </div>
       </section>
@@ -229,12 +318,20 @@
           <p class="eyebrow">Pedido guiado</p>
           <h2 id="questionnaire-title">Conta-nos o que precisas</h2>
           <p>
-            Responde ao questionario e o site prepara uma mensagem de email com todos os detalhes.
-            Para envio automatico por formulario, configura um endpoint gratuito no ficheiro JavaScript.
+            Responde ao questionario e o pedido e enviado automaticamente para a Mystic Lis.
+            Receberas tambem um email de confirmacao com o resumo do teu pedido.
           </p>
         </div>
 
-        <form id="inquiry-form" class="inquiry-form" data-contact-email="mysticlis@example.com">
+        <form
+          id="inquiry-form"
+          class="inquiry-form"
+          data-contact-email="mysticlis@example.com"
+          data-web3forms-access-key="YOUR_WEB3FORMS_ACCESS_KEY"
+          data-emailjs-public-key="YOUR_EMAILJS_PUBLIC_KEY"
+          data-emailjs-service-id="YOUR_EMAILJS_SERVICE_ID"
+          data-emailjs-auto-template-id="YOUR_EMAILJS_AUTO_REPLY_TEMPLATE_ID"
+        >
           <div class="form-grid">
             <label>
               Nome
@@ -301,7 +398,7 @@
           </label>
 
           <div class="form-actions">
-            <button class="button primary" type="submit">Preparar email</button>
+            <button class="button primary" type="submit">Enviar pedido</button>
             <button class="button ghost" type="button" id="copy-summary">Copiar resumo</button>
           </div>
           <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
@@ -330,6 +427,39 @@
       <a href="#top">Voltar ao topo</a>
     </footer>
 
-    <script src="assets/script.js?v=true-logo"></script>
+    <div id="gallery-modal" class="gallery-modal" hidden>
+      <div class="gallery-modal-backdrop" data-close-modal></div>
+      <div
+        class="gallery-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="gallery-modal-title"
+        aria-describedby="gallery-modal-description"
+      >
+        <button class="gallery-modal-close" type="button" aria-label="Fechar galeria" data-close-modal>
+          &times;
+        </button>
+        <div class="gallery-modal-body">
+          <figure class="gallery-modal-media">
+            <img id="gallery-modal-image" src="" alt="" />
+          </figure>
+          <div class="gallery-modal-details">
+            <p class="eyebrow" id="gallery-modal-category"></p>
+            <h3 id="gallery-modal-title"></h3>
+            <p id="gallery-modal-description"></p>
+            <ul class="gallery-modal-tags" id="gallery-modal-tags"></ul>
+            <div class="gallery-modal-actions">
+              <a class="button primary" href="#questionario" id="gallery-modal-cta">Pedir semelhante</a>
+              <button class="button ghost" type="button" id="gallery-modal-prev">Anterior</button>
+              <button class="button ghost" type="button" id="gallery-modal-next">Seguinte</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/catalog.js?v=shop"></script>
+    <script src="assets/script.js?v=shop"></script>
   </body>
 </html>
