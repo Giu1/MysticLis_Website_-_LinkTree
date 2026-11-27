@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Comparar versoes | Mystic Lis</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        background: #18161e;
+        color: #f3eee6;
+        font: 500 13px/1.4 Inter, system-ui, sans-serif;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
+        padding: 10px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      header strong { font-size: 14px; letter-spacing: 0.02em; }
+      label { display: inline-flex; align-items: center; gap: 6px; opacity: 0.9; }
+      select, button, a.back {
+        font: inherit;
+        color: inherit;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        padding: 6px 12px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      select option { color: #18161e; }
+      button[aria-pressed="true"] { background: #f3eee6; color: #18161e; }
+      .spacer { flex: 1; }
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 10px;
+        min-height: 0;
+      }
+      .side { display: grid; grid-template-rows: auto 1fr; gap: 8px; min-height: 0; }
+      .side-head { display: flex; align-items: center; gap: 8px; }
+      .frame-wrap {
+        position: relative;
+        min-height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #fff;
+        display: grid;
+        place-items: start center;
+      }
+      iframe { border: 0; width: 100%; height: 100%; background: #fff; }
+      body.mobile iframe { width: 390px; max-width: 100%; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
+      body.mobile .frame-wrap { background: #2a2733; }
+      @media (max-width: 800px) {
+        main { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Mystic Lis · comparar versoes</strong>
+      <label>Pagina
+        <select id="page">
+          <option value="index.html">Inicio</option>
+          <option value="velas.html">Loja</option>
+          <option value="eventos.html">Eventos</option>
+        </select>
+      </label>
+      <span>
+        <button type="button" id="desk" aria-pressed="true">Computador</button>
+        <button type="button" id="phone" aria-pressed="false">Telemovel</button>
+      </span>
+      <label><input type="checkbox" id="sync" checked /> Scroll sincronizado</label>
+      <span class="spacer"></span>
+      <a class="back" id="back" href="index.html">Voltar ao site</a>
+    </header>
+    <main>
+      <section class="side">
+        <div class="side-head"><label>Esquerda <select id="left"></select></label></div>
+        <div class="frame-wrap"><iframe id="f-left" title="Versao da esquerda"></iframe></div>
+      </section>
+      <section class="side">
+        <div class="side-head"><label>Direita <select id="right"></select></label></div>
+        <div class="frame-wrap"><iframe id="f-right" title="Versao da direita"></iframe></div>
+      </section>
+    </main>
+
+    <script>window.MysticLisVersionsListOnly = true;</script>
+    <script src="assets/versions/versions.js"></script>
+    <script>
+      (function () {
+        var V = window.MysticLisVersions.list;
+        var q = new URLSearchParams(location.search);
+        var page = document.getElementById("page");
+        var left = document.getElementById("left");
+        var right = document.getElementById("right");
+        var fl = document.getElementById("f-left");
+        var fr = document.getElementById("f-right");
+        var sync = document.getElementById("sync");
+
+        V.forEach(function (v) {
+          [left, right].forEach(function (s) {
+            var o = document.createElement("option");
+            o.value = v.id;
+            o.textContent = v.label + " — " + v.name;
+            s.appendChild(o);
+          });
+        });
+        left.value = q.get("a") || (V.length > 1 ? V[V.length - 2].id : V[0].id);
+        right.value = q.get("b") || V[V.length - 1].id;
+        if (q.get("page")) page.value = q.get("page");
+        if (q.get("device") === "mobile") setDevice(true);
+
+        function src(v) { return page.value + "?v=" + v + "&embed=1"; }
+        function load() {
+          fl.src = src(left.value);
+          fr.src = src(right.value);
+          document.getElementById("back").href = page.value;
+          var p = new URLSearchParams({ page: page.value, a: left.value, b: right.value });
+          if (document.body.classList.contains("mobile")) p.set("device", "mobile");
+          history.replaceState(null, "", "?" + p.toString());
+        }
+        function setDevice(mobile) {
+          document.body.classList.toggle("mobile", mobile);
+          document.getElementById("desk").setAttribute("aria-pressed", String(!mobile));
+          document.getElementById("phone").setAttribute("aria-pressed", String(mobile));
+        }
+        [page, left, right].forEach(function (s) { s.addEventListener("change", load); });
+        document.getElementById("desk").onclick = function () { setDevice(false); load(); };
+        document.getElementById("phone").onclick = function () { setDevice(true); load(); };
+
+        /* Scroll both sides together, by fraction of the page height. */
+        var lock = false;
+        function link(a, b) {
+          a.addEventListener("load", function () {
+            var w = a.contentWindow;
+            w.addEventListener("scroll", function () {
+              if (!sync.checked || lock) return;
+              var d = w.document.documentElement;
+              var f = w.scrollY / Math.max(1, d.scrollHeight - w.innerHeight);
+              var o = b.contentWindow, od = o.document.documentElement;
+              lock = true;
+              o.scrollTo(0, f * (od.scrollHeight - o.innerHeight));
+              requestAnimationFrame(function () { lock = false; });
+            }, { passive: true });
+          });
+        }
+        link(fl, fr);
+        link(fr, fl);
+        load();
+      })();
+    </script>
+  </body>
+</html>
