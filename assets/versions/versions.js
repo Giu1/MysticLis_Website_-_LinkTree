@@ -26,7 +26,7 @@
         "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap"
     }
   ];
-  var PUBLISHED = "v1";
+  var PUBLISHED = "v2";
   var KEY = "mysticlis-version";
 
   /* compare.html only needs the list. */
